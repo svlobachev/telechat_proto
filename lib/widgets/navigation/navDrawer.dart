@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:telechat_proto/app/theme/theme_scheme.dart';
 
 // Press the Navigation Drawer button to the left of AppBar to show
 // a simple Drawer with two items.
@@ -25,10 +28,12 @@ class NavDrawer extends StatelessWidget {
           },
         ),
         ListTile(
-          title: Text("Ночной режим"),
+          title: Text("Ночной/Дневной режимы"),
           leading: const Icon(Icons.dark_mode),
           onTap: () {
-            Navigator.pop(context);
+            Get.changeTheme(
+                Get.isDarkMode ? MyFlexThemeDataLight : MyFlexThemeDataDart);
+            Get.back();
           },
         ),
         ListTile(

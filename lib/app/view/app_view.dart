@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:telechat_proto/app/routes/pages_routes.dart';
 import 'package:telechat_proto/app/theme/theme_scheme.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:telechat_proto/l10n/l10n.dart';
+import 'package:telechat_proto/localization/getx_localization.dart';
+import 'dart:ui' as ui;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,6 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: Messages(), // ваши переводы
+      locale: ui.window.locale,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
 
@@ -24,15 +25,9 @@ class MyApp extends StatelessWidget {
       theme: MyFlexThemeDataLight,
       darkTheme: MyFlexThemeDataDart,
 
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: AppLocalizations.supportedLocales,
-
-      initialRoute: RouteManager.loginPage,
-      onGenerateRoute: RouteManager.generateRoute,
+      unknownRoute: MyUnknownRoute,
+      initialRoute: MyInitialRoute,
+      getPages: myGetPages,
 
       builder: (context, child) => ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, child!),
