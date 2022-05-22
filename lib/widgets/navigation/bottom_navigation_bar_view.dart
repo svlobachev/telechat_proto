@@ -6,6 +6,11 @@ class MyBottomNavigationBar extends StatelessWidget {
   RxInt _selectedIndex = 0.obs;
   Rx<MaterialColor> _myCollor = Colors.red.obs;
   Icon _myIcon = Icon(FontAwesomeIcons.plugCircleMinus);
+  // Image _myIcon = new Image.asset(
+  //   'assets/img/icons8_1.gif',
+  //   width: 30.0,
+  //   height: 30.0,
+  // );
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -40,11 +45,20 @@ class MyBottomNavigationBar extends StatelessWidget {
                   ? {
                       _myCollor.value = Colors.green,
                       _myIcon = Icon(FontAwesomeIcons.childReaching)
-                      // _myIcon = Icon(Icons.conn),
+                      // new Image.asset(
+                      //   'icons8-2.gif',
+                      //   width: 30.0,
+                      //   height: 30.0,
+                      // )
                     }
                   : {
                       _myCollor.value = Colors.red,
                       _myIcon = Icon(FontAwesomeIcons.plugCircleMinus)
+                      // new Image.asset(
+                      //   'assets/img/icons8_1.gif',
+                      //   width: 30.0,
+                      //   height: 30.0,
+                      // )
                     };
             },
             elevation: 5,
