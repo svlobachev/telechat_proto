@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       theme: MyFlexThemeDataLight,
       darkTheme: MyFlexThemeDataDark,
 
-      unknownRoute: MyUnknownRoute,
-      initialRoute: MyInitialRoute,
+      unknownRoute: myUnknownRoute,
+      initialRoute: myInitialRoute,
       getPages: myGetPages,
 
       builder: (context, child) => ResponsiveWrapper.builder(
@@ -46,45 +46,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-//
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // Using MultiProvider is convenient when providing multiple objects.
-//     return MultiProvider(
-//       providers: [],
-//       builder: (context, child) {
-//         MaterialApp(
-//           debugShowCheckedModeBanner: false,
-//           themeMode: ThemeMode.system,
-//           title: 'Provider Demo',
-//
-//           // подключить готовые библиотечные темы
-//           // theme: FlexThemeData.light(scheme: FlexScheme.deepBlue),
-//           // darkTheme: FlexThemeData.dark(scheme: FlexScheme.deepBlue),
-//
-//           // подключить пользовательскую тему
-//           theme: MyFlexThemeDataLight,
-//           darkTheme: MyFlexThemeDataDart,
-//
-//           localizationsDelegates: const [
-//             AppLocalizations.delegate,
-//             GlobalMaterialLocalizations.delegate,
-//             GlobalCupertinoLocalizations.delegate,
-//           ],
-//           supportedLocales: AppLocalizations.supportedLocales,
-//
-//           initialRoute: RouteManager.loginPage,
-//           onGenerateRoute: RouteManager.generateRoute,
-//
-//           // initialRoute: '/',
-//           // routes: myRoutes,
-//         );
-//       },
-//     );
-//   }
-// }
