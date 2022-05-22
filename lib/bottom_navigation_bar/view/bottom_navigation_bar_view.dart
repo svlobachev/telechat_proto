@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:telechat_proto/bottom_navigation_bar/model/slected_index.dart';
+import 'package:get/get.dart';
 import 'package:telechat_proto/widgets/navigation/floatingActionButton.dart';
-import 'package:telechat_proto/widgets/navigation/myAppBar.dart';
-import 'package:telechat_proto/widgets/navigation/navDrawer.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
-  int _selectedIndex = 0;
+  RxInt _selectedIndex = 0.obs;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -31,37 +27,36 @@ class MyBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SelectedIndexData>(context);
     void _onItemTapped(int index) {
-      _selectedIndex = provider.setSelectedIndex = index;
+      _selectedIndex.value = index;
     }
 
-    return Scaffold(
-      floatingActionButton: myFloatingActionButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.theater_comedy),
-            label: 'Мои темы',
+    return Obx(() => Scaffold(
+          floatingActionButton: myFloatingActionButton(),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          body: Center(
+            child: _widgetOptions.elementAt(_selectedIndex.value),
           ),
-          BottomNavigationBarItem(
-            // icon: Icon(FontAwesomeIcons.rad),
-            icon: Icon(Icons.radar),
-            label: 'Радар',
+          bottomNavigationBar: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.theater_comedy),
+                label: 'Мои темы',
+              ),
+              BottomNavigationBarItem(
+                // icon: Icon(FontAwesomeIcons.rad),
+                icon: Icon(Icons.radar),
+                label: 'Радар',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.chat_bubble),
+                label: 'Мои чаты',
+              ),
+            ],
+            currentIndex: _selectedIndex.value,
+            selectedItemColor: Colors.amber[800],
+            onTap: _onItemTapped,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble),
-            label: 'Мои чаты',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
-    );
+        ));
   }
 }
