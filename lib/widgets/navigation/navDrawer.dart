@@ -32,7 +32,7 @@ class NavDrawer extends StatelessWidget {
           leading: const Icon(Icons.dark_mode),
           onTap: () {
             Get.changeTheme(
-                Get.isDarkMode ? MyFlexThemeDataLight : MyFlexThemeDataDart);
+                Get.isDarkMode ? MyFlexThemeDataLight : MyFlexThemeDataDark);
             Get.back();
           },
         ),

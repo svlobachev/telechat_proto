@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:telechat_proto/widgets/navigation/floatingActionButton.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
   RxInt _selectedIndex = 0.obs;
+  Rx<MaterialColor> _myCollor = Colors.red.obs;
+  Icon _myIcon = Icon(FontAwesomeIcons.plugCircleMinus);
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -32,7 +34,26 @@ class MyBottomNavigationBar extends StatelessWidget {
     }
 
     return Obx(() => Scaffold(
-          floatingActionButton: myFloatingActionButton(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _myCollor == Colors.red
+                  ? {
+                      _myCollor.value = Colors.green,
+                      _myIcon = Icon(FontAwesomeIcons.childReaching)
+                      // _myIcon = Icon(Icons.conn),
+                    }
+                  : {
+                      _myCollor.value = Colors.red,
+                      _myIcon = Icon(FontAwesomeIcons.plugCircleMinus)
+                    };
+            },
+            elevation: 5,
+            // backgroundColor: Colors.green,
+            // child: const Icon(Icons.thumb_up),
+            // backgroundColor: Colors.red,
+            backgroundColor: _myCollor.value,
+            child: _myIcon,
+          ),
           floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
           body: Center(
             child: _widgetOptions.elementAt(_selectedIndex.value),

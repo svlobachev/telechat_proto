@@ -112,7 +112,7 @@ ThemeData MyFlexThemeDataLight = FlexThemeData.light(
 // fontFamily: GoogleFonts.notoSans().fontFamily,
 );
 // darkTheme: FlexThemeData.dark(colorScheme: myFlexSchemeDark)
-ThemeData MyFlexThemeDataDart = FlexThemeData.dark(
+ThemeData MyFlexThemeDataDark = FlexThemeData.dark(
   colorScheme: myFlexSchemeDark,
 
   surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,

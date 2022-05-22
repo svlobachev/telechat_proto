@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
       // подключить пользовательскую тему
       theme: MyFlexThemeDataLight,
-      darkTheme: MyFlexThemeDataDart,
+      darkTheme: MyFlexThemeDataDark,
 
       unknownRoute: MyUnknownRoute,
       initialRoute: MyInitialRoute,
