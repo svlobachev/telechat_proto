@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telechat_proto/app/view/app_view.dart';
+import 'package:telechat_proto/app/app_view.dart';
 
 void main() {
   runApp(const MyApp());

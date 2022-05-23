@@ -14,7 +14,7 @@ class Messages extends Translations {
           "language": "Русский",
           "welcome": "Добро пожаловать!",
           "username": "Никнейм",
-          "password": "пароль",
+          "password": "Пароль",
           "enter": "ВХОД"
         }
       };

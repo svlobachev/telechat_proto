@@ -3,9 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
-  RxInt _selectedIndex = 0.obs;
-  Rx<MaterialColor> _myCollor = Colors.red.obs;
-  Icon _myIcon = Icon(FontAwesomeIcons.plugCircleMinus);
+  MyBottomNavigationBar({Key? key}) : super(key: key);
+
+  final RxInt _selectedIndex = 0.obs;
+  final Rx<MaterialColor> _myCollor = Colors.red.obs;
+  Icon _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus);
   // Image _myIcon = new Image.asset(
   //   'assets/img/icons8_1.gif',
   //   width: 30.0,
@@ -44,21 +46,11 @@ class MyBottomNavigationBar extends StatelessWidget {
               _myCollor == Colors.red
                   ? {
                       _myCollor.value = Colors.green,
-                      _myIcon = Icon(FontAwesomeIcons.childReaching)
-                      // new Image.asset(
-                      //   'icons8-2.gif',
-                      //   width: 30.0,
-                      //   height: 30.0,
-                      // )
+                      _myIcon = const Icon(FontAwesomeIcons.childReaching)
                     }
                   : {
                       _myCollor.value = Colors.red,
-                      _myIcon = Icon(FontAwesomeIcons.plugCircleMinus)
-                      // new Image.asset(
-                      //   'assets/img/icons8_1.gif',
-                      //   width: 30.0,
-                      //   height: 30.0,
-                      // )
+                      _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus)
                     };
             },
             elevation: 5,
@@ -73,7 +65,7 @@ class MyBottomNavigationBar extends StatelessWidget {
             child: _widgetOptions.elementAt(_selectedIndex.value),
           ),
           bottomNavigationBar: BottomNavigationBar(
-            items: <BottomNavigationBarItem>[
+            items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.theater_comedy),
                 label: 'Мои темы',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:telechat_proto/app/theme/theme_scheme.dart';
+import 'package:telechat_proto/app/theme_scheme.dart';
 
 // Press the Navigation Drawer button to the left of AppBar to show
 // a simple Drawer with two items.

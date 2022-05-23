@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:telechat_proto/app/routes/pages_routes.dart';
-import 'package:telechat_proto/app/theme/theme_scheme.dart';
-import 'package:telechat_proto/localization/getx_localization.dart';
+import 'package:telechat_proto/app/pages_routes.dart';
+import 'package:telechat_proto/app/theme_scheme.dart';
+import 'package:telechat_proto/app/localization.dart';
 import 'dart:ui' as ui;
 
 class MyApp extends StatelessWidget {
