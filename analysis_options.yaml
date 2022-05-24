@@ -24,7 +24,7 @@ analyzer:
     missing_required_param: warning
     # treat missing returns as a warning (not a hint)
     missing_return: warning
-    # allow having 
+    # allow having
     todo: ignore
     # allow self-reference to deprecated members (we do this because otherwise we have
     # to annotate every member in every test, assert, etc, when we deprecate something)

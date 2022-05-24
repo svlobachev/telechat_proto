@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar_view.dart';
+import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/view/bottom_navigation_bar_view.dart';
 import 'package:telechat_proto/widgets/navigation/myAppBar.dart';
 import 'package:telechat_proto/widgets/navigation/navDrawer.dart';
 

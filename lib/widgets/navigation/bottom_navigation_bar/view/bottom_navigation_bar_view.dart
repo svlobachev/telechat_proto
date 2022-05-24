@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyFloatingActionButtonController.dart';
+
+MyFloatingActionButtonController myFloatingActionButtonController =
+    Get.put(MyFloatingActionButtonController());
 
 class MyBottomNavigationBar extends StatelessWidget {
   MyBottomNavigationBar({Key? key}) : super(key: key);
 
   final RxInt _selectedIndex = 0.obs;
-  final Rx<MaterialColor> _myCollor = Colors.red.obs;
+
+  Rx<MaterialColor> _myCollor = Colors.red.obs;
   Icon _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus);
-  // Image _myIcon = new Image.asset(
-  //   'assets/img/icons8_1.gif',
-  //   width: 30.0,
-  //   height: 30.0,
-  // );
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -43,16 +44,14 @@ class MyBottomNavigationBar extends StatelessWidget {
     return Obx(() => Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              _myCollor == Colors.red
-                  ? {
-                      _myCollor.value = Colors.green,
-                      _myIcon = const Icon(FontAwesomeIcons.childReaching)
-                    }
-                  : {
-                      _myCollor.value = Colors.red,
-                      _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus)
-                    };
+              myFloatingActionButtonController.setMyCollor = _myCollor;
+              myFloatingActionButtonController.setMyIcon = _myIcon;
+              _myCollor =
+                  myFloatingActionButtonController.getController.tackeMyColor();
+              _myIcon =
+                  myFloatingActionButtonController.getController.tackeMyIcon();
             },
+
             elevation: 5,
             // backgroundColor: Colors.green,
             // child: const Icon(Icons.thumb_up),
