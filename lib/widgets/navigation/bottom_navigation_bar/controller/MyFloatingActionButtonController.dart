@@ -9,7 +9,7 @@ class MyFloatingActionButtonController extends GetxController {
   late Icon _myIcon;
   late Rx<MaterialColor> _myCollor;
 
-  MyFloatingActionButtonController get getController => Get.find();
+  // MyFloatingActionButtonController get getController => Get.find();// add this line
 
   set setMyIcon(Icon value) {
     _myIcon = value;
@@ -17,16 +17,16 @@ class MyFloatingActionButtonController extends GetxController {
 
   set setMyCollor(Rx<MaterialColor> value) {
     _myCollor = value;
-  } // add this line
+  }
 
-  Rx<MaterialColor> tackeMyColor() {
+  Rx<MaterialColor> get getMyColor {
     _myCollor == Colors.red
         ? _myCollor.value = Colors.green
         : _myCollor.value = Colors.red;
     return _myCollor;
   }
 
-  Icon tackeMyIcon() {
+  Icon get getMyIcon {
     _myCollor == Colors.red
         ? _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus)
         : _myIcon = const Icon(FontAwesomeIcons.childReaching);

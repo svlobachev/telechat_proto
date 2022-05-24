@@ -46,16 +46,12 @@ class MyBottomNavigationBar extends StatelessWidget {
             onPressed: () {
               myFloatingActionButtonController.setMyCollor = _myCollor;
               myFloatingActionButtonController.setMyIcon = _myIcon;
-              _myCollor =
-                  myFloatingActionButtonController.getController.tackeMyColor();
-              _myIcon =
-                  myFloatingActionButtonController.getController.tackeMyIcon();
+              // _myCollor =
+              //     myFloatingActionButtonController.getController.tackeMyColor();
+              _myCollor = myFloatingActionButtonController.getMyColor;
+              _myIcon = myFloatingActionButtonController.getMyIcon;
             },
-
             elevation: 5,
-            // backgroundColor: Colors.green,
-            // child: const Icon(Icons.thumb_up),
-            // backgroundColor: Colors.red,
             backgroundColor: _myCollor.value,
             child: _myIcon,
           ),
@@ -70,7 +66,6 @@ class MyBottomNavigationBar extends StatelessWidget {
                 label: 'Мои темы',
               ),
               BottomNavigationBarItem(
-                // icon: Icon(FontAwesomeIcons.rad),
                 icon: Icon(Icons.radar),
                 label: 'Радар',
               ),
