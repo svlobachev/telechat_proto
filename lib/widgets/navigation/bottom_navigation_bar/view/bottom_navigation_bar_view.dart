@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyFloatingActionButtonController.dart';
 
@@ -12,7 +11,10 @@ class MyBottomNavigationBar extends StatelessWidget {
   final RxInt _selectedIndex = 0.obs;
 
   Rx<MaterialColor> _myCollor = Colors.red.obs;
-  Icon _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus);
+  Image _myIcon = Image.asset(
+    'assets/img/icons8-off-80-black.png',
+    height: 40,
+  );
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -44,10 +46,9 @@ class MyBottomNavigationBar extends StatelessWidget {
     return Obx(() => Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
+              // myFloatingActionButtonController.setContext = context;
               myFloatingActionButtonController.setMyCollor = _myCollor;
               myFloatingActionButtonController.setMyIcon = _myIcon;
-              // _myCollor =
-              //     myFloatingActionButtonController.getController.tackeMyColor();
               _myCollor = myFloatingActionButtonController.getMyColor;
               _myIcon = myFloatingActionButtonController.getMyIcon;
             },
@@ -60,18 +61,18 @@ class MyBottomNavigationBar extends StatelessWidget {
             child: _widgetOptions.elementAt(_selectedIndex.value),
           ),
           bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
+            items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.theater_comedy),
-                label: 'Мои темы',
+                label: "myTopics".tr,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.radar),
-                label: 'Радар',
+                label: 'radar'.tr,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.chat_bubble),
-                label: 'Мои чаты',
+                label: 'chats'.tr,
               ),
             ],
             currentIndex: _selectedIndex.value,

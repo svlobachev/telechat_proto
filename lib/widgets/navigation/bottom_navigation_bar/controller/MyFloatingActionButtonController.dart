@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/view/bottom_navigation_bar_view.dart';
 
 MyBottomNavigationBar myBottomNavigationBar = Get.put(MyBottomNavigationBar());
 
 class MyFloatingActionButtonController extends GetxController {
-  late Icon _myIcon;
+  late Image _myIcon;
   late Rx<MaterialColor> _myCollor;
+  late BuildContext _context;
+
+  set setContext(BuildContext value) {
+    _context = value;
+  }
 
   // MyFloatingActionButtonController get getController => Get.find();// add this line
 
-  set setMyIcon(Icon value) {
+  set setMyIcon(Image value) {
     _myIcon = value;
   }
 
@@ -26,10 +30,22 @@ class MyFloatingActionButtonController extends GetxController {
     return _myCollor;
   }
 
-  Icon get getMyIcon {
+  Image get getMyIcon {
     _myCollor == Colors.red
-        ? _myIcon = const Icon(FontAwesomeIcons.plugCircleMinus)
-        : _myIcon = const Icon(FontAwesomeIcons.childReaching);
+        ? {
+            _myIcon = Image.asset(
+              'assets/img/icons8-off-80-black.png',
+              height: 40,
+            ),
+            // CustomSnackBar(_context, Text('IAmUnavailable'.tr), _myCollor.value)
+          }
+        : {
+            _myIcon = _myIcon = Image.asset(
+              'assets/img/icons8-on-80-black.png',
+              height: 40,
+            ),
+            // CustomSnackBar(_context, Text('IAmAvailable'.tr), _myCollor.value)
+          };
     return _myIcon;
   }
 }
