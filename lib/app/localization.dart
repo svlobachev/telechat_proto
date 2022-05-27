@@ -20,7 +20,8 @@ class Messages extends Translations {
           'chats': 'Chats',
           'labelUndoText': 'Undo',
           'IAmAvailable': 'I am available',
-          'IAmUnavailable': 'I\'m unavailable'
+          'IAmUnavailable': 'I\'m unavailable',
+          'AppBarTitle': 'The prototype of Telechat',
         },
         'ru_RU': {
           'language': 'Русский',
@@ -39,7 +40,8 @@ class Messages extends Translations {
           'chats': 'Мои чаты',
           'labelUndoText': 'Закрыть',
           'IAmAvailable': 'Я доступен(на)',
-          'IAmUnavailable': 'Я недоступен(на)'
+          'IAmUnavailable': 'Я недоступен(на)',
+          'AppBarTitle': 'Телечат - прототип',
         }
       };
 }

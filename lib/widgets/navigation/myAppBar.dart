@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // AppBar MyAppBar = AppBar(
 //   title: const Text('AppBar'),
@@ -26,7 +27,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('AppBar'),
+      title: Text('AppBarTitle'.tr),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.add_alert),

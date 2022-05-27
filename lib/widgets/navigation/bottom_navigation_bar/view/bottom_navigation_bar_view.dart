@@ -21,9 +21,6 @@ class MyBottomNavigationBar extends StatelessWidget {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    TopicsView(
-      items: TopicsModel().items,
-    ),
     Text(
       'Index 1',
       style: optionStyle,
@@ -32,9 +29,8 @@ class MyBottomNavigationBar extends StatelessWidget {
       'Index 2',
       style: optionStyle,
     ),
-    Text(
-      'Index 3',
-      style: optionStyle,
+    TopicsView(
+      items: TopicsModel().items,
     ),
   ];
 
@@ -64,16 +60,16 @@ class MyBottomNavigationBar extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.theater_comedy),
-                label: "myTopics".tr,
+                icon: Icon(Icons.chat_bubble),
+                label: 'chats'.tr,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.radar),
                 label: 'radar'.tr,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.chat_bubble),
-                label: 'chats'.tr,
+                icon: Icon(Icons.theater_comedy),
+                label: "myTopics".tr,
               ),
             ],
             currentIndex: _selectedIndex.value,
