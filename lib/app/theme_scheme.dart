@@ -1,8 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
-// static const FlexSchemeData customColors = FlexSchemeData(
-
 ColorScheme myFlexSchemeLight = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xff0e343d),

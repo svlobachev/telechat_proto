@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:telechat_proto/widgets/chats_list/model/chats_model.dart';
+import 'package:telechat_proto/widgets/chats_list/view/chats_view.dart';
 import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyFloatingActionButtonController.dart';
 import 'package:telechat_proto/widgets/topics_list/model/topics_model.dart';
 import 'package:telechat_proto/widgets/topics_list/view/topics_view.dart';
@@ -21,9 +23,8 @@ class MyBottomNavigationBar extends StatelessWidget {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 1',
-      style: optionStyle,
+    ChatsView(
+      items: ChatsModel().items,
     ),
     Text(
       'Index 2',

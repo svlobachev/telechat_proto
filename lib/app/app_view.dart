@@ -7,23 +7,27 @@ import 'package:telechat_proto/app/localization.dart';
 import 'dart:ui' as ui;
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  // подключить готовые библиотечные темы
+  // ThemeData theme = FlexThemeData.light(scheme: FlexScheme.greyLaw);
+  // ThemeData darkTheme = FlexThemeData.dark(scheme: FlexScheme.greyLaw);
+
+  // подключить пользовательскую тему
+  ThemeData theme = MyFlexThemeDataLight;
+  ThemeData darkTheme = MyFlexThemeDataDark;
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      translations: Messages(), // ваши переводы
+      translations: Messages(),
+      // ваши переводы
       locale: ui.window.locale,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
 
-      // подключить готовые библиотечные темы
-      // theme: FlexThemeData.light(scheme: FlexScheme.deepBlue),
-      // darkTheme: FlexThemeData.dark(scheme: FlexScheme.deepBlue),
-
-      // подключить пользовательскую тему
-      theme: MyFlexThemeDataLight,
-      darkTheme: MyFlexThemeDataDark,
+      theme: theme,
+      darkTheme: darkTheme,
 
       unknownRoute: myUnknownRoute,
       initialRoute: myInitialRoute,

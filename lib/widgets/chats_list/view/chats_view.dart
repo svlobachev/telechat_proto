@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telechat_proto/widgets/topics_list/model/topics_model.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:telechat_proto/widgets/chats_list/model/chats_model.dart';
 
-class TopicsView extends StatelessWidget {
+class ChatsView extends StatelessWidget {
+  const ChatsView({Key? key, required this.items}) : super(key: key);
   final List<ListItem> items;
-
-  TopicsView({key, required this.items});
 
   @override
   Widget build(BuildContext context) {
-    // void _onChanged(bool? value) {
-    //   _isChecked.value = value!;
-    // }
-
     return Scaffold(
       body: ListView.separated(
         separatorBuilder: (BuildContext context, int index) => const Divider(
@@ -20,22 +16,19 @@ class TopicsView extends StatelessWidget {
           // color: Colors.blueGrey,
           thickness: 0,
         ),
-        // Let the ListView know how many items it needs to build.
         itemCount: items.length,
-        // Provide a builder function. This is where the magic happens.
-        // Convert each item into a widget based on the type of item it is.
         itemBuilder: (BuildContext context, int index) {
           final ListItem item = items[index];
-
           return ListTile(
+            leading: item.buildAvatar(context),
             title: item.buildTitle(context),
             subtitle: item.buildSubtitle(context),
-            trailing: Obx(() => item.buildCheckbox(context)),
+            onTap: () {
+              Get.toNamed('/chat_view', arguments: 'Get is the best');
+            },
           );
         },
       ),
     );
   }
 }
-
-/// The base class for the different types of items the list can contain.

@@ -6,7 +6,7 @@ class TopicsModel {
     100,
     (int i) => i % 6 == 0
         ? HeadingItem('Заглавная тема $i', i)
-        : MessageItem('Подтема $i', 'комментарии $i', i),
+        : MessageItem('Субтема $i', 'участников $i', i),
   );
 }
 
