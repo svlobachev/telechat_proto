@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:telechat_proto/widgets/chats_list/controller/chats_controller.dart';
 import '../model/chats_model.dart';
 
 class ChatsView extends StatelessWidget {
@@ -23,7 +23,7 @@ class ChatsView extends StatelessWidget {
             title: item.buildTitle(context),
             subtitle: item.buildSubtitle(context),
             onTap: () {
-              Get.toNamed('/chat_view', arguments: 'Get is the best');
+              GetToNamed().getToNamed;
             },
           );
         },

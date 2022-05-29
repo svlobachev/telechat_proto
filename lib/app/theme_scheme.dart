@@ -20,7 +20,7 @@ ColorScheme myFlexSchemeLight = ColorScheme(
   errorContainer: Color(0xffffdad4),
   onErrorContainer: Color(0xff410001),
   outline: Color(0xff5f5f5f),
-  background: Color(0xfffbfcfc),
+  background: Color(0xffffffff),
   onBackground: Color(0xff121212),
   surface: Color(0xffffffff),
   onSurface: Color(0xff090909),
@@ -67,7 +67,6 @@ ColorScheme myFlexSchemeDark = ColorScheme(
 
 ThemeData MyFlexThemeDataLight = FlexThemeData.light(
   colorScheme: myFlexSchemeLight,
-  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
   blendLevel: 20,
   appBarOpacity: 0.95,
   tabBarStyle: FlexTabBarStyle.forBackground,
@@ -82,7 +81,7 @@ ThemeData MyFlexThemeDataLight = FlexThemeData.light(
     toggleButtonsRadius: 7.0,
     textButtonSchemeColor: SchemeColor.secondary,
     outlinedButtonSchemeColor: SchemeColor.secondary,
-    inputDecoratorSchemeColor: SchemeColor.tertiary,
+    inputDecoratorSchemeColor: SchemeColor.secondary,
     fabRadius: 40.0,
     fabSchemeColor: SchemeColor.primary,
     snackBarBackgroundSchemeColor: SchemeColor.primary,
@@ -110,7 +109,6 @@ ThemeData MyFlexThemeDataLight = FlexThemeData.light(
 ThemeData MyFlexThemeDataDark = FlexThemeData.dark(
   colorScheme: myFlexSchemeDark,
 
-  surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
   blendLevel: 15,
   appBarStyle: FlexAppBarStyle.background,
   appBarOpacity: 0.90,

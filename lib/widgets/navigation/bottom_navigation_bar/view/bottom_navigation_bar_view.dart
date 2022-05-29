@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:telechat_proto/widgets/chats_list/model/chats_model.dart';
 import 'package:telechat_proto/widgets/chats_list/view/chats_view.dart';
-import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyFloatingActionButtonController.dart';
-import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyTabController.dart';
+import 'package:telechat_proto/widgets/navigation/floating_action_button_view/controller/my_floating_action_button_controller.dart';
+import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/my_tab_controller.dart';
+import 'package:telechat_proto/widgets/navigation/floating_action_button_view/view/floating_action_button_view.dart';
 import 'package:telechat_proto/widgets/topics_list/model/topics_model.dart';
 import 'package:telechat_proto/widgets/topics_list/view/topics_view.dart';
 
@@ -15,26 +16,10 @@ class MyBottomNavigationBar extends StatelessWidget {
   MyBottomNavigationBar({Key? key}) : super(key: key);
   final MyTabController _tabx = Get.put(MyTabController());
 
-  Rx<MaterialColor> _myCollor = Colors.red.obs;
-  Image _myIcon = Image.asset(
-    'assets/img/icons8-off-80-black.png',
-    height: 40,
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Obx(() => FloatingActionButton(
-            onPressed: () {
-              myFloatingActionButtonController.setMyCollor = _myCollor;
-              myFloatingActionButtonController.setMyIcon = _myIcon;
-              _myCollor = myFloatingActionButtonController.getMyColor;
-              _myIcon = myFloatingActionButtonController.getMyIcon;
-            },
-            elevation: 5,
-            backgroundColor: _myCollor.value,
-            child: _myIcon,
-          )),
+      floatingActionButton: MyFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: GFTabBarView(controller: _tabx.controller, children: <Widget>[
         Container(
@@ -43,9 +28,7 @@ class MyBottomNavigationBar extends StatelessWidget {
           ),
         ),
         Container(
-          child: const Text(
-            'Index 2',
-          ),
+          child: GFLoader(type: GFLoaderType.circle),
         ),
         Container(
           child: TopicsView(
@@ -57,6 +40,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         tabBarHeight: 70.0,
         tabBarColor: Theme.of(context).colorScheme.primary,
         indicatorColor: Colors.deepOrange,
+        indicatorWeight: 5.0,
         labelColor: Theme.of(context).colorScheme.onPrimary,
         unselectedLabelColor: Theme.of(context).colorScheme.secondaryContainer,
 

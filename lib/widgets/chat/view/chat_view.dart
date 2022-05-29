@@ -2,7 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 
-import 'text_bar_at_bottom.dart';
+import 'text_field_at_bottom.dart';
 
 class ChatView extends StatelessWidget {
   AudioPlayer audioPlayer = AudioPlayer();
@@ -11,14 +11,15 @@ class ChatView extends StatelessWidget {
   bool isPlaying = false;
   bool isLoading = false;
   bool isPause = false;
-  final Color dialogColor = const Color(0xff9cc3cc);
+
   final DateTime now = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
+    final Color dialogColor = Theme.of(context).colorScheme.onPrimary;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TextField at Bottom'),
+        title: const Text('Чат'),
       ),
       body: Column(
         children: <Widget>[
@@ -38,7 +39,7 @@ class ChatView extends StatelessWidget {
                     sent: true,
                   ),
                   BubbleNormal(
-                    text: 'bubble normal with tail',
+                    text: 'пузырь нормальный с хвостом',
                     isSender: false,
                     // color: Color(0xFF1B97F3),
                     color: dialogColor,
@@ -48,7 +49,7 @@ class ChatView extends StatelessWidget {
                     ),
                   ),
                   BubbleNormal(
-                    text: 'bubble normal with tail',
+                    text: 'пузырь нормальный с хвостом',
                     color: dialogColor,
                     sent: true,
                   ),
@@ -56,7 +57,7 @@ class ChatView extends StatelessWidget {
                     date: DateTime(now.year, now.month, now.day - 2),
                   ),
                   BubbleNormal(
-                    text: 'bubble normal without tail',
+                    text: 'пузырь обычный без хвоста',
                     isSender: false,
                     color: dialogColor,
                     tail: false,
@@ -66,7 +67,7 @@ class ChatView extends StatelessWidget {
                     ),
                   ),
                   BubbleNormal(
-                    text: 'bubble normal without tail',
+                    text: 'пузырь обычный без хвоста',
                     color: const Color(0xFFE8E8EE),
                     tail: false,
                     sent: true,
@@ -74,7 +75,7 @@ class ChatView extends StatelessWidget {
                     delivered: true,
                   ),
                   BubbleSpecialOne(
-                    text: 'bubble special one with tail',
+                    text: 'пузырь специальный с хвостом',
                     isSender: false,
                     color: dialogColor,
                     textStyle: const TextStyle(
@@ -86,12 +87,12 @@ class ChatView extends StatelessWidget {
                     date: DateTime(now.year, now.month, now.day - 1),
                   ),
                   const BubbleSpecialOne(
-                    text: 'bubble special one with tail',
+                    text: 'пузырь специальный с хвостом',
                     color: Color(0xFFE8E8EE),
                     seen: true,
                   ),
                   BubbleSpecialOne(
-                    text: 'bubble special one without tail',
+                    text: 'пузырь специальный без хвоста',
                     isSender: false,
                     tail: false,
                     color: dialogColor,
@@ -101,13 +102,13 @@ class ChatView extends StatelessWidget {
                     ),
                   ),
                   const BubbleSpecialOne(
-                    text: 'bubble special one without tail',
+                    text: 'пузырь специальный без хвоста',
                     tail: false,
                     color: Color(0xFFE8E8EE),
                     sent: true,
                   ),
                   BubbleSpecialTwo(
-                    text: 'bubble special tow with tail',
+                    text: 'жгут специальный пузырьковый с хвостом',
                     isSender: false,
                     color: dialogColor,
                     textStyle: const TextStyle(
@@ -119,12 +120,12 @@ class ChatView extends StatelessWidget {
                     date: now,
                   ),
                   const BubbleSpecialTwo(
-                    text: 'bubble special tow with tail',
+                    text: 'жгут специальный пузырьковый с хвостом',
                     color: Color(0xFFE8E8EE),
                     sent: true,
                   ),
                   BubbleSpecialTwo(
-                    text: 'bubble special tow without tail',
+                    text: 'пузырчатая специальная пакля без хвоста',
                     isSender: false,
                     tail: false,
                     color: dialogColor,
@@ -134,30 +135,32 @@ class ChatView extends StatelessWidget {
                     ),
                   ),
                   const BubbleSpecialTwo(
-                    text: 'bubble special tow without tail',
+                    text: 'пузырчатая специальная пакля без хвоста',
                     tail: false,
                     color: Color(0xFFE8E8EE),
                     delivered: true,
                   ),
                   BubbleSpecialThree(
-                    text: 'bubble special three without tail',
+                    text: 'пузырь специальная тройка без хвоста',
                     color: dialogColor,
                     tail: false,
-                    textStyle: const TextStyle(color: Colors.white, fontSize: 16),
+                    textStyle:
+                        const TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   BubbleSpecialThree(
-                    text: 'bubble special three with tail',
+                    text: 'пузырь специальный три с хвостом',
                     color: dialogColor,
-                    textStyle: const TextStyle(color: Colors.white, fontSize: 16),
+                    textStyle:
+                        const TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   const BubbleSpecialThree(
-                    text: 'bubble special three without tail',
+                    text: 'пузырь специальная тройка без хвоста',
                     color: Color(0xFFE8E8EE),
                     tail: false,
                     isSender: false,
                   ),
                   const BubbleSpecialThree(
-                    text: 'bubble special three with tail',
+                    text: 'пузырь специальный три с хвостом',
                     color: Color(0xFFE8E8EE),
                     isSender: false,
                   ),

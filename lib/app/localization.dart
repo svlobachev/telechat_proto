@@ -22,6 +22,7 @@ class Messages extends Translations {
           'IAmAvailable': 'I am available',
           'IAmUnavailable': "I'm unavailable",
           'AppBarTitle': 'The prototype of Telechat',
+          'yourMessage': 'Your message',
         },
         'ru_RU': {
           'language': 'Русский',
@@ -42,6 +43,7 @@ class Messages extends Translations {
           'IAmAvailable': 'Я доступен(на)',
           'IAmUnavailable': 'Я недоступен(на)',
           'AppBarTitle': 'Телечат - прототип',
+          'yourMessage': 'Ваше сообщение',
         }
       };
 }

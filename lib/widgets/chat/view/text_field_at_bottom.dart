@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextBarAtBottom extends StatelessWidget {
   TextEditingController commentController = TextEditingController();
@@ -11,12 +12,13 @@ class TextBarAtBottom extends StatelessWidget {
           child: Container(
         child: TextFormField(
           autocorrect: false,
-          decoration: const InputDecoration(
-            labelText: 'Some Text',
-            labelStyle: TextStyle(fontSize: 16.0, color: Colors.black),
+          decoration: InputDecoration(
+            labelText: 'yourMessage'.tr,
+            labelStyle: TextStyle(
+                fontSize: 16.0, color: Theme.of(context).colorScheme.primary),
             // fillColor: Colors.black,
-            // border:
-            //     OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+            border:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           ),
         ),
       )),

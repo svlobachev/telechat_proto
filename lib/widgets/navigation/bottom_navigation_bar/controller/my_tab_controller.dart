@@ -5,7 +5,19 @@ class MyTabController extends GetxController
     with GetSingleTickerProviderStateMixin {
   List<Tab> myTabs = [
     Tab(
-      icon: const Icon(Icons.chat_bubble),
+      // icon: const Icon(Icons.chat_bubble),
+      icon: Icon(Icons.chat_bubble),
+      // GFIconBadge(
+      //   counterChild: GFBadge(
+      //     child: Text("12"),
+      //   ),
+      //   child: GFIconButton(
+      //     onPressed: () => ChatsView(
+      //       items: ChatsModel().items,
+      //     ),
+      //     icon: Icon(Icons.chat_bubble),
+      //   ),
+      // ),
       child: Text(
         'chats'.tr,
       ),
@@ -19,7 +31,7 @@ class MyTabController extends GetxController
     Tab(
       icon: const Icon(Icons.theater_comedy),
       child: Text(
-        'Topics'.tr,
+        'myTopics'.tr,
       ),
     ),
   ];
