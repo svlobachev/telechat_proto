@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telechat_proto/widgets/topics_list/model/topics_model.dart';
+import '../model/topics_model.dart';
 
 class TopicsView extends StatelessWidget {
   final List<ListItem> items;
 
-  TopicsView({key, required this.items});
+  const TopicsView({key, required this.items});
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ class CustomSnackBar {
       BuildContext context, Widget content, MaterialColor currentColor) {
     final SnackBar snackBar = SnackBar(
         action: SnackBarAction(
-          label: "labelUndoText".tr,
+          label: 'labelUndoText'.tr,
           textColor: Colors.yellowAccent,
           onPressed: () {
             // Some code to undo the change.

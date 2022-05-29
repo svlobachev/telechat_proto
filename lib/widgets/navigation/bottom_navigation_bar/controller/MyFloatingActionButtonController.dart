@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/view/bottom_navigation_bar_view.dart';
+import '../view/bottom_navigation_bar_view.dart';
 
 MyBottomNavigationBar myBottomNavigationBar = Get.put(MyBottomNavigationBar());
 

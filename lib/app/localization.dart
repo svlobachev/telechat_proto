@@ -20,7 +20,7 @@ class Messages extends Translations {
           'chats': 'Chats',
           'labelUndoText': 'Undo',
           'IAmAvailable': 'I am available',
-          'IAmUnavailable': 'I\'m unavailable',
+          'IAmUnavailable': "I'm unavailable",
           'AppBarTitle': 'The prototype of Telechat',
         },
         'ru_RU': {

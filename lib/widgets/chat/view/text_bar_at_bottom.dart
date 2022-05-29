@@ -11,8 +11,8 @@ class TextBarAtBottom extends StatelessWidget {
           child: Container(
         child: TextFormField(
           autocorrect: false,
-          decoration: new InputDecoration(
-            labelText: "Some Text",
+          decoration: const InputDecoration(
+            labelText: 'Some Text',
             labelStyle: TextStyle(fontSize: 16.0, color: Colors.black),
             // fillColor: Colors.black,
             // border:
@@ -22,7 +22,7 @@ class TextBarAtBottom extends StatelessWidget {
       )),
       // Second child is button
       IconButton(
-        icon: Icon(Icons.send),
+        icon: const Icon(Icons.send),
         iconSize: 16.0,
         onPressed: () {},
       )

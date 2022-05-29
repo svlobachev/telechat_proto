@@ -26,7 +26,7 @@ abstract class ListItem {
 class HeadingItem implements ListItem {
   final String heading;
   final int id;
-  RxBool _isCheckedHeading = false.obs;
+  final RxBool _isCheckedHeading = false.obs;
 
   HeadingItem(this.heading, this.id);
 
@@ -90,7 +90,6 @@ class MessageItem implements ListItem {
 
   @override
   Widget buildCheckbox(BuildContext context) => Checkbox(
-        tristate: false,
         // checkColor: Colors.white,
         // fillColor: MaterialStateProperty.resolveWith(getColor),
         onChanged: (bool? value) {

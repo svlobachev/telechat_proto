@@ -1,23 +1,24 @@
-import 'package:flutter/material.dart';
-import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:telechat_proto/widgets/chat/view/text_bar_at_bottom.dart';
+import 'package:chat_bubbles/chat_bubbles.dart';
+import 'package:flutter/material.dart';
+
+import 'text_bar_at_bottom.dart';
 
 class ChatView extends StatelessWidget {
-  AudioPlayer audioPlayer = new AudioPlayer();
-  Duration duration = new Duration();
-  Duration position = new Duration();
+  AudioPlayer audioPlayer = AudioPlayer();
+  Duration duration = const Duration();
+  Duration position = const Duration();
   bool isPlaying = false;
   bool isLoading = false;
   bool isPause = false;
-  final dialogColor = Color(0xff9cc3cc);
-  final now = new DateTime.now();
+  final Color dialogColor = const Color(0xff9cc3cc);
+  final DateTime now = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TextField at Bottom'),
+        title: const Text('TextField at Bottom'),
       ),
       body: Column(
         children: <Widget>[
@@ -26,7 +27,7 @@ class ChatView extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   BubbleNormalAudio(
-                    color: Color(0xFFE8E8EE),
+                    color: const Color(0xFFE8E8EE),
                     duration: duration.inSeconds.toDouble(),
                     position: position.inSeconds.toDouble(),
                     isPlaying: isPlaying,
@@ -41,35 +42,32 @@ class ChatView extends StatelessWidget {
                     isSender: false,
                     // color: Color(0xFF1B97F3),
                     color: dialogColor,
-                    tail: true,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
                   ),
                   BubbleNormal(
                     text: 'bubble normal with tail',
-                    isSender: true,
                     color: dialogColor,
-                    tail: true,
                     sent: true,
                   ),
                   DateChip(
-                    date: new DateTime(now.year, now.month, now.day - 2),
+                    date: DateTime(now.year, now.month, now.day - 2),
                   ),
                   BubbleNormal(
                     text: 'bubble normal without tail',
                     isSender: false,
                     color: dialogColor,
                     tail: false,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
                   ),
                   BubbleNormal(
                     text: 'bubble normal without tail',
-                    color: Color(0xFFE8E8EE),
+                    color: const Color(0xFFE8E8EE),
                     tail: false,
                     sent: true,
                     seen: true,
@@ -79,15 +77,15 @@ class ChatView extends StatelessWidget {
                     text: 'bubble special one with tail',
                     isSender: false,
                     color: dialogColor,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
                   ),
                   DateChip(
-                    date: new DateTime(now.year, now.month, now.day - 1),
+                    date: DateTime(now.year, now.month, now.day - 1),
                   ),
-                  BubbleSpecialOne(
+                  const BubbleSpecialOne(
                     text: 'bubble special one with tail',
                     color: Color(0xFFE8E8EE),
                     seen: true,
@@ -97,12 +95,12 @@ class ChatView extends StatelessWidget {
                     isSender: false,
                     tail: false,
                     color: dialogColor,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                     ),
                   ),
-                  BubbleSpecialOne(
+                  const BubbleSpecialOne(
                     text: 'bubble special one without tail',
                     tail: false,
                     color: Color(0xFFE8E8EE),
@@ -112,7 +110,7 @@ class ChatView extends StatelessWidget {
                     text: 'bubble special tow with tail',
                     isSender: false,
                     color: dialogColor,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                     ),
@@ -120,9 +118,8 @@ class ChatView extends StatelessWidget {
                   DateChip(
                     date: now,
                   ),
-                  BubbleSpecialTwo(
+                  const BubbleSpecialTwo(
                     text: 'bubble special tow with tail',
-                    isSender: true,
                     color: Color(0xFFE8E8EE),
                     sent: true,
                   ),
@@ -131,12 +128,12 @@ class ChatView extends StatelessWidget {
                     isSender: false,
                     tail: false,
                     color: dialogColor,
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 20,
                       color: Colors.black,
                     ),
                   ),
-                  BubbleSpecialTwo(
+                  const BubbleSpecialTwo(
                     text: 'bubble special tow without tail',
                     tail: false,
                     color: Color(0xFFE8E8EE),
@@ -146,24 +143,22 @@ class ChatView extends StatelessWidget {
                     text: 'bubble special three without tail',
                     color: dialogColor,
                     tail: false,
-                    textStyle: TextStyle(color: Colors.white, fontSize: 16),
+                    textStyle: const TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   BubbleSpecialThree(
                     text: 'bubble special three with tail',
                     color: dialogColor,
-                    tail: true,
-                    textStyle: TextStyle(color: Colors.white, fontSize: 16),
+                    textStyle: const TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  BubbleSpecialThree(
-                    text: "bubble special three without tail",
+                  const BubbleSpecialThree(
+                    text: 'bubble special three without tail',
                     color: Color(0xFFE8E8EE),
                     tail: false,
                     isSender: false,
                   ),
-                  BubbleSpecialThree(
-                    text: "bubble special three with tail",
+                  const BubbleSpecialThree(
+                    text: 'bubble special three with tail',
                     color: Color(0xFFE8E8EE),
-                    tail: true,
                     isSender: false,
                   ),
                   // TextBarAtBottom(),
@@ -179,13 +174,12 @@ class ChatView extends StatelessWidget {
 
   void _changeSeek(double value) {
     {
-      audioPlayer.seek(new Duration(seconds: value.toInt()));
+      audioPlayer.seek(Duration(seconds: value.toInt()));
     }
-    ;
   }
 
   void _playAudio() async {
-    final url =
+    const String url =
         'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3';
     if (isPause) {
       await audioPlayer.resume();
@@ -193,24 +187,20 @@ class ChatView extends StatelessWidget {
         isPlaying = true;
         isPause = false;
       }
-      ;
     } else if (isPlaying) {
       await audioPlayer.pause();
       {
         isPlaying = false;
         isPause = true;
       }
-      ;
     } else {
       {
         isLoading = true;
       }
-      ;
       await audioPlayer.play(url);
       {
         isPlaying = false;
       }
-      ;
     }
 
     audioPlayer.onDurationChanged.listen((Duration d) {
@@ -218,21 +208,18 @@ class ChatView extends StatelessWidget {
         duration = d;
         isLoading = false;
       }
-      ;
     });
     audioPlayer.onAudioPositionChanged.listen((Duration p) {
       {
         position = p;
       }
-      ;
     });
     audioPlayer.onPlayerCompletion.listen((event) {
       {
         isPlaying = true;
-        duration = new Duration();
-        position = new Duration();
+        duration = const Duration();
+        position = const Duration();
       }
-      ;
     });
   }
 }

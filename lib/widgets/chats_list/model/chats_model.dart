@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:getwidget/getwidget.dart';
+import 'package:flutter/material.dart';
 
 class ChatsModel {
   final List<ListItem> items = List<ListItem>.generate(
@@ -20,7 +21,9 @@ class MessageItem implements ListItem {
   final String sender;
   final String body;
   final int id;
-  // final RxBool _isChecked = false.obs;
+  List<Color> colors = [Colors.red, Colors.green, Colors.yellow];
+  Random random = Random();
+  late int randomNumber; //
 
   MessageItem(this.sender, this.body, this.id);
 
@@ -30,10 +33,26 @@ class MessageItem implements ListItem {
   }
 
   @override
-  Widget buildAvatar(BuildContext context) => Icon(
-        Icons.account_circle,
-        size: 50,
-        color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+  Widget buildAvatar(BuildContext context) => GFIconBadge(
+        position: GFBadgePosition.bottomEnd(),
+        child: GFIconButton(
+          type: GFButtonType.transparent,
+          shape: GFIconButtonShape.circle,
+
+          onPressed: () {},
+          icon: Icon(
+            Icons.account_circle,
+            size: 50,
+            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+          ),
+          // type: GFType.outline,
+        ),
+        counterChild: GFBadge(
+          shape: GFBadgeShape.circle,
+          size: 30.0,
+          color: colors[random.nextInt(2)], // from 0 upto 99 included,
+          child: Text(random.nextInt(25).toString()),
+        ),
       );
 
   @override

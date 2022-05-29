@@ -32,9 +32,9 @@ ColorScheme myFlexSchemeLight = ColorScheme(
   shadow: Color(0xff000000),
 );
 
-const ColorScheme myFlexSchemeDark = ColorScheme(
+ColorScheme myFlexSchemeDark = ColorScheme(
   brightness: Brightness.dark,
-  primary: Color(0xff748bac),
+  primary: Color(0xff000000),
   onPrimary: Color(0xfff4f7fb),
   primaryContainer: Color(0xff1b2e4b),
   onPrimaryContainer: Color(0xffd6dbe1),
@@ -67,7 +67,6 @@ const ColorScheme myFlexSchemeDark = ColorScheme(
 
 ThemeData MyFlexThemeDataLight = FlexThemeData.light(
   colorScheme: myFlexSchemeLight,
-
   surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
   blendLevel: 20,
   appBarOpacity: 0.95,
@@ -106,10 +105,8 @@ ThemeData MyFlexThemeDataLight = FlexThemeData.light(
   useMaterial3ErrorColors: true,
   visualDensity: FlexColorScheme.comfortablePlatformDensity,
   useMaterial3: true,
-// To use the playground font, add GoogleFonts package and uncomment
-// fontFamily: GoogleFonts.notoSans().fontFamily,
 );
-// darkTheme: FlexThemeData.dark(colorScheme: myFlexSchemeDark)
+
 ThemeData MyFlexThemeDataDark = FlexThemeData.dark(
   colorScheme: myFlexSchemeDark,
 

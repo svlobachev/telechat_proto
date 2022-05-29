@@ -16,7 +16,7 @@ class MyLogin extends StatelessWidget {
               Text(
                 'welcome'.tr,
                 // style: Theme.of(context).textTheme.headline3,
-                style: TextStyle(height: 2, fontSize: 20),
+                style: const TextStyle(height: 2, fontSize: 20),
               ),
               TextFormField(
                 decoration: InputDecoration(hintText: 'username'.tr),
@@ -31,13 +31,13 @@ class MyLogin extends StatelessWidget {
                 height: 24,
               ),
               ElevatedButton(
-                child: Text('enter'.tr),
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/mainPage');
                 },
                 style: ElevatedButton.styleFrom(
                     // primary: primaryColor,
                     ),
+                child: Text('enter'.tr),
               )
             ],
           ),

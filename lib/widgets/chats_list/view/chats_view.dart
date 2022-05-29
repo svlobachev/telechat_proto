@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:telechat_proto/widgets/chats_list/model/chats_model.dart';
+import '../model/chats_model.dart';
 
 class ChatsView extends StatelessWidget {
   const ChatsView({Key? key, required this.items}) : super(key: key);
