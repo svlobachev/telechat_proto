@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
-
-import '../../../chats_list/model/chats_model.dart';
-import '../../../chats_list/view/chats_view.dart';
-import '../../../topics_list/model/topics_model.dart';
-import '../../../topics_list/view/topics_view.dart';
-import '../controller/MyFloatingActionButtonController.dart';
-import '../controller/MyTabController.dart';
+import 'package:telechat_proto/widgets/chats_list/model/chats_model.dart';
+import 'package:telechat_proto/widgets/chats_list/view/chats_view.dart';
+import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyFloatingActionButtonController.dart';
+import 'package:telechat_proto/widgets/navigation/bottom_navigation_bar/controller/MyTabController.dart';
+import 'package:telechat_proto/widgets/topics_list/model/topics_model.dart';
+import 'package:telechat_proto/widgets/topics_list/view/topics_view.dart';
 
 MyFloatingActionButtonController myFloatingActionButtonController =
     Get.put(MyFloatingActionButtonController());
