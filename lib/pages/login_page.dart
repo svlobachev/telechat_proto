@@ -9,6 +9,7 @@ class MyLogin extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
+          width: 800.0,
           padding: const EdgeInsets.all(80.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
